@@ -1,0 +1,42 @@
+<%- include('partials/header.ejs'); -%>
+<h1>Homepage</h1>
+
+
+<% if (data.length > 0) { %>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Warehouse</th>
+            <th>Manufacturing Date</th>
+            <th>Product Cost</th>
+          </tr>
+        <% data.forEach(result => { %>
+            <form action="/delete-product-submit" method="">
+            <tr id="<%= result.id %>">
+                
+                    <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.id %>" disabled/></th>
+                    <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.product_name %>" disabled/></th>
+                    <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.category %>" disabled/></th>
+                    <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.quantity %>" disabled/></th>
+                    <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.warehouse %>" disabled/></th>
+                    <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.manufacturing_date %>" disabled/></th>
+                    <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.product_cost %>" disabled/></th>
+                    <th><button action="/delete-product-submit" method="" type="submit">❌</button></th>
+               
+               
+                <!-- <th><button>✏️</button></th> -->
+            </tr>
+        </form>
+       
+        <% }) %> 
+        </table>
+<% } else { %>
+    <h3>No data</h3>
+<% } %>
+
+<!-- <input type="submit"/> -->
+
+<%- include('partials/footer.ejs'); -%>
