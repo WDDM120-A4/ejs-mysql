@@ -10,13 +10,28 @@ app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const connection = mysql.createConnection({
+let connectionObj = {
     user: "root",
     password: "root",
     host: "localhost",
     port: 8889,
     database: "nodejs"
-})
+}
+if(process.argv[2] === 'ola'){
+  connectionObj = {
+      user: "root",
+      password: "",
+      host: "localhost",
+      port: 3306,
+      database: "nodejs"
+  }
+}
+
+const connection = mysql.createConnection(connectionObj);
+connection.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+});
 
 router.get("/", function (req, res) {
     
@@ -43,9 +58,8 @@ router.post("/add-product-submit", function (req, res) {
 })
 
 
-router.delete("/delete-product-submit", function (req, res) {
-    console.log(req);
-    const queryStr = `DELETE FROM inventory WHERE id=9;`
+router.post("/delete-product-submit", function (req, res) {
+    const queryStr = `DELETE FROM inventory WHERE id=${req.body.id};`
 
     connection.query(queryStr);
 
