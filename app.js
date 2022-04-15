@@ -58,9 +58,8 @@ router.post("/add-product-submit", function (req, res) {
 })
 
 
-router.delete("/delete-product-submit", function (req, res) {
-    console.log(req);
-    const queryStr = `DELETE FROM inventory WHERE id=9;`
+router.post("/delete-product-submit", function (req, res) {
+    const queryStr = `DELETE FROM inventory WHERE id=${req.body.id};`
 
     connection.query(queryStr);
 
