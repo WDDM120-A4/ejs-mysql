@@ -46,6 +46,12 @@ router.get("/add-product", function (req, res) {
     res.render("./add-product");
 });
 
+//product page
+router.get("/product", function (req, res) {
+    res.render("product");
+});
+
+
 router.post("/add-product-submit", function (req, res) {
     // console.log(req);
     const queryStr = `INSERT INTO inventory (product_name, category, quantity, warehouse, product_cost) VALUES ('${req.body.product_name}', '${req.body.category}', '${req.body.quantity}', '${req.body.warehouse}', '${req.body.product_cost}' );`
@@ -68,6 +74,8 @@ router.post("/delete-product-submit", function (req, res) {
 })
 
 app.use("/", router);
-
+  
 app.listen(SERVER_PORT);
 console.log(`Server is running in port ${SERVER_PORT}`);
+
+
