@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "start:ola": "node app.js ola",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Christa Faye Reyes",
