@@ -48,7 +48,12 @@ router.get("/add-product", function (req, res) {
 
 //product page
 router.get("/product", function (req, res) {
-    res.render("product");
+    res.render("./product");
+});
+
+//about page
+router.get("/about", function (req, res) {
+    res.render("./about");
 });
 
 
@@ -77,5 +82,3 @@ app.use("/", router);
   
 app.listen(SERVER_PORT);
 console.log(`Server is running in port ${SERVER_PORT}`);
-
-

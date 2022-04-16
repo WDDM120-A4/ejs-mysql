@@ -29,3 +29,7 @@ footer {
   padding-left: 20px;
   margin-top: auto;
 }
+
+#updateForm {
+  display: none;
+}
