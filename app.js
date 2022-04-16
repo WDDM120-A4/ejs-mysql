@@ -47,7 +47,8 @@ router.get("/add-product", function (req, res) {
 });
 
 //product page
-router.get("/product", function (req, res) {
+router.get("/product/:id", function (req, res) {
+    const queryStr = `SELECT * FROM inventory WHERE id = ${req.params.id};`;
     res.render("./product");
 });
 
