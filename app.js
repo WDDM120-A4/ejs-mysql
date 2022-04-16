@@ -77,13 +77,25 @@ router.post("/add-product-submit", function (req, res) {
 
 
 router.post("/delete-product-submit", function (req, res) {
-    const queryStr = `DELETE FROM inventory WHERE id=${req.body.id};`
+    var queryStr = `DELETE FROM inventory WHERE id=${req.body.id};`
 
     connection.query(queryStr);
 
     res.writeHead(302, { Location: "/" });
     res.end();
 })
+
+//for update
+router.post("/update-inventory", function (req, res) { 
+    const queryStr = `UPDATE inventory SET product_name = '${req.body.productName}' WHERE id = '${req.body.id}');`;
+    
+    connection.query(queryStr);
+    
+    res.writeHead(302, { Location: "/" });
+    res.end();
+    
+})
+
 
 app.use("/", router);
   
