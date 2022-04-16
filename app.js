@@ -49,7 +49,13 @@ router.get("/add-product", function (req, res) {
 //product page
 router.get("/product/:id", function (req, res) {
     const queryStr = `SELECT * FROM inventory WHERE id = ${req.params.id};`;
-    res.render("./product");
+    connection.query(queryStr, (err, result)=> {
+        if (err){
+            throw err
+        } 
+
+        res.render("./product", { result: result[0] });
+    });
 });
 
 //about page
