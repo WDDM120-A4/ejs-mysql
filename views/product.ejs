@@ -17,7 +17,7 @@
     <form action="/update-inventory" method="post">
         <label for="productName">Update Product Info:</label>
         <input type="text" id="productName" name="productName" value="<%= result.product_name %>">
-        <input type="hidden" id="productName" name="id" value="<%= result.id %>">
+        <input type="hidden" name="id" value="<%= result.id %>">
         <input type="submit" />
 
     </form>
