@@ -1,0 +1,46 @@
+<%- include('partials/header'); -%>
+
+<div class="container">
+    <h1>Product Info</h1>
+    <div class="row">
+        <div class="col">
+            <h3>Product Name: <%= result.product_name %></h3>
+            <h4>ID Number: <%= result.id %></h4>
+
+            <h5>Category:</h5><p><%= result.category %></p>
+            <h5>Warehouse:</h5><p><%= result.warehouse %></p>
+            <h5>Date:</h5><p><%= result.manufacturing_date %></p>
+            <h5>Quantity:</h5><p><%= result.quantity %></p>
+            <h5>Cost:</h5><p><%= result.product_cost %></p>
+
+        </div>
+    </div>
+    <div class="col">
+        <h2>Update Info</h2>
+        <form action="/update-inventory" method="post" style="margin-bottom: 20px;">
+            <h3>Update Product Info:</h3>
+            <input type="hidden" name="id" value="<%= result.id %>">
+
+            <label for="product_name"> Product name: </label>
+            <input type="text" id="product_name" name="product_name" value="<%= result.product_name %>" required/><br />
+
+            <label for="category"> Category: </label>
+            <input type="text" id="category" name="category" value="<%= result.category %>" required/><br />
+
+            <label for="quantity"> Quantity </label>
+            <input type="text" id="quantity" name="quantity" value="<%= result.quantity %>" required/><br />
+
+            <label for="warehouse"> Warehouse: </label>
+            <input type="text" id="warehouse" name="warehouse" value="<%= result.warehouse %>" required/><br />
+
+            <label for="product_cost"> Product Cost: </label>
+            <input type="text" id="product_cost" name="product_cost" value="<%= result.product_cost %>" required/><br />
+
+            <input type="submit" />
+
+        </form>
+
+    </div>
+</div>
+
+<%- include('partials/footer'); -%>
