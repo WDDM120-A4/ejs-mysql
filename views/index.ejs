@@ -14,7 +14,7 @@
             <th>Product Cost</th>
           </tr>
         <% data.forEach(result => { %>
-            <form action="/delete-product-submit" method="post">
+            <form>
                 <input type="hidden" name="id" value="<%= result.id %>">
                 <tr id="<%= result.id %>">
                         <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.id %>" disabled/></th>
@@ -24,7 +24,7 @@
                         <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.warehouse %>" disabled/></th>
                         <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.manufacturing_date %>" disabled/></th>
                         <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.product_cost %>" disabled/></th>
-                        <th><button type="submit">❌</button></th>
+                        <th><button id="<%= result.id %>" onclick="deleteProduct(event)">❌</button></th>
                         <th><a href="/product/<%= result.id %>">EDIT</a></th>
                 </tr>
             </form>

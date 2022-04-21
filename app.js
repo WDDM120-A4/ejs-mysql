@@ -75,12 +75,12 @@ router.post("/add-product-submit", function (req, res) {
 })
 
 
-router.post("/delete-product-submit", function (req, res) {
-    var queryStr = `DELETE FROM inventory WHERE id=${req.body.id};`
+router.delete("/delete-product-submit/:id", function (req, res) {
+    const queryStr = `DELETE FROM inventory WHERE id=${req.params.id};`
 
     connection.query(queryStr);
 
-    res.writeHead(302, { Location: "/" });
+    res.writeHead(302, );
     res.end();
 })
 
