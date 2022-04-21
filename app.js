@@ -65,7 +65,6 @@ router.get("/about", function (req, res) {
 
 
 router.post("/add-product-submit", function (req, res) {
-    // console.log(req);
     const queryStr = `INSERT INTO inventory (product_name, category, quantity, warehouse, product_cost) VALUES ('${req.body.product_name}', '${req.body.category}', '${req.body.quantity}', '${req.body.warehouse}', '${req.body.product_cost}' );`
     
     connection.query(queryStr);
@@ -86,14 +85,13 @@ router.post("/delete-product-submit", function (req, res) {
 })
 
 //for update
-router.post("/update-inventory", function (req, res) { 
-    const queryStr = `UPDATE inventory SET product_name = '${req.body.productName}' WHERE id = '${req.body.id}');`;
-    
+router.post("/update-inventory", function (req, res) {
+    const body = req.body;
+    const queryStr = `UPDATE inventory SET product_name='${body.product_name}', category='${body.category}', quantity='${body.quantity}', warehouse='${body.warehouse}', product_cost='${body.product_cost}' WHERE id='${body.id}';`;
     connection.query(queryStr);
     
     res.writeHead(302, { Location: "/" });
     res.end();
-    
 })
 
 

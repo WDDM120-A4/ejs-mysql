@@ -15,9 +15,24 @@
 <div class="new-info">
     <h2>Update Info</h2>
     <form action="/update-inventory" method="post">
-        <label for="productName">Update Product Info:</label>
-        <input type="text" id="productName" name="productName" value="<%= result.product_name %>">
+        <h3>Update Product Info:</h3>
         <input type="hidden" name="id" value="<%= result.id %>">
+
+        <label for="product_name"> Product name: </label>
+        <input type="text" id="product_name" name="product_name" value="<%= result.product_name %>" required/><br />
+
+        <label for="category"> Category: </label>
+        <input type="text" id="category" name="category" value="<%= result.category %>" required/><br />
+
+        <label for="quantity"> Quantity </label>
+        <input type="text" id="quantity" name="quantity" value="<%= result.quantity %>" required/><br />
+
+        <label for="warehouse"> Warehouse: </label>
+        <input type="text" id="warehouse" name="warehouse" value="<%= result.warehouse %>" required/><br />
+
+        <label for="product_cost"> Product Cost: </label>
+        <input type="text" id="product_cost" name="product_cost" value="<%= result.product_cost %>" required/><br />
+
         <input type="submit" />
 
     </form>
