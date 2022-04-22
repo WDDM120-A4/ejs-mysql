@@ -12,6 +12,39 @@ html {
   scroll-behavior: smooth;
 }
 
+.title {
+  text-align: center;
+  color: darkslategrey;
+  font-size: 3rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+table {
+  transform: scale(0.9);
+  margin-top: 1rem;
+}
+
+tr, th {
+  border: 1px solid lightseagreen;
+}
+
+#tableHeader {
+  text-align: center;
+  background-color: cadetblue;
+}
+
+#tableDetails th {
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+#edit {
+  background-color:brown;
+  color: white;
+}
+
 /*header*/
 #humber-logo {
   float: right;
@@ -28,4 +61,67 @@ footer {
   opacity: 0.6;
   padding-left: 20px;
   margin-top: auto;
+  text-align: center;
+}
+
+/* Form */
+#formAdd {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem;
+  margin-top: 2rem;
+}
+
+#formAdd h1 {
+  font-size: 3rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: darkslategrey;
+}
+
+#formAdd input[type=text] {
+  width: 50%;
+  padding: 0.5rem;
+  /* margin: 0.5rem; */
+  display: inline-block;
+  border: 1px solid #333;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#formAdd input[type=submit] {
+  width: 10%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+#formAdd label {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 400;
+  color: darkslategrey;
+}
+
+/* Edit */
+#editProduct {
+  display: flex;
+  flex-direction: row;
+}
+
+.col h6 {
+  font-size: 1.5rem !important;
+}
+
+/* About */
+#about h1 {
+  font-size: 3rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  color: darkslategrey;
 }

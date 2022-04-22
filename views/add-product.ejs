@@ -1,15 +1,16 @@
 <%- include('partials/header'); -%>
 
-<h1>Add new product</h1>
 
-<form action="/add-product-submit" method="post">
-    <label for="product_name"> Product name: </label>
+
+<form id="formAdd" action="/add-product-submit" method="post">
+    <h1>Add new product</h1>
+    <label for="product_name" class="mt-3"> Product name: </label>
     <input type="text" id="product_name" name="product_name" required/><br />
 
     <label for="category"> Category: </label>
     <input type="text" id="category" name="category" required/><br />
 
-    <label for="quantity"> Quantity </label>
+    <label for="quantity"> Quantity: </label>
     <input type="text" id="quantity" name="quantity" required/><br />
 
     <label for="warehouse"> Warehouse: </label>

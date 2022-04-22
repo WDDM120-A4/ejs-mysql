@@ -1,10 +1,11 @@
 <%- include('partials/header.ejs'); -%>
-<h1>Homepage</h1>
 
+
+<h1 class="p-5 title">Product Inventory</h1>
 
 <% if (data.length > 0) { %>
     <table>
-        <tr>
+        <tr id="tableHeader">
             <th>Id</th>
             <th>Product Name</th>
             <th>Category</th>
@@ -12,20 +13,23 @@
             <th>Warehouse</th>
             <th>Manufacturing Date</th>
             <th>Product Cost</th>
+            <th id="edit">Edit/Delete</th>
           </tr>
         <% data.forEach(result => { %>
             <form>
                 <input type="hidden" name="id" value="<%= result.id %>">
-                <tr id="<%= result.id %>">
-                        <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.id %>" disabled/></th>
-                        <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.product_name %>" disabled/></th>
-                        <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.category %>" disabled/></th>
-                        <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.quantity %>" disabled/></th>
-                        <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.warehouse %>" disabled/></th>
-                        <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.manufacturing_date %>" disabled/></th>
-                        <th><input type="text" id="<%= result.id %>" name="<%= result.id %>" value="<%= result.product_cost %>" disabled/></th>
-                        <th><button id="<%= result.id %>" onclick="deleteProduct(event)">❌</button></th>
-                        <th><a href="/product/<%= result.id %>">EDIT</a></th>
+                <tr id="tableDetails">
+                        <th id="<%= result.id %>" name="<%= result.id %>"><%= result.id %></th>
+                        <th id="<%= result.id %>" name="<%= result.id %>"><%= result.product_name %></th>
+                        <th id="<%= result.id %>" name="<%= result.id %>"><%= result.category %></th>
+                        <th id="<%= result.id %>" name="<%= result.id %>"><%= result.quantity %></th>
+                        <th id="<%= result.id %>" name="<%= result.id %>"><%= result.warehouse %></th>
+                        <th id="<%= result.id %>" name="<%= result.id %>"><%= result.manufacturing_date %></th>
+                        <th id="<%= result.id %>" name="<%= result.id %>"><%= result.product_cost %></th>
+                        <th class="m-2">
+                            <button><a href="/product/<%= result.id %>">📝</a></button>
+                            <button id="<%= result.id %>" onclick="deleteProduct(event)">❌</button>
+                        </th>
                 </tr>
             </form>
        
